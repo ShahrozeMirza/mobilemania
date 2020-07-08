@@ -256,6 +256,9 @@ a.download-now-btn{
   /* padding: 70px 0; */
   background: url('../images/vectorbg.png');
   min-height: 765px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .platforms-right{
