@@ -50,7 +50,8 @@ $(document).on('click', '#nav-icon0', function(){
 }) 
 
 AOS.init({
-	duration: 1000
+	duration: 1000,
+	once: true
 });
      
 });
