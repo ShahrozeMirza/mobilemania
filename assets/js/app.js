@@ -3,10 +3,7 @@ $(document).ready(function(){
 		$(this).toggleClass('open');
 	});
 
-	$(window).on('scroll', function(){
-
-	})
-
+	
     window.onscroll = function() {
 		scrollFunction()
 	};
@@ -19,7 +16,12 @@ $(document).ready(function(){
 		$("#header-menu").removeClass('bg-nav-trans');
 		$("a.nav-link").css('font-size','16px');
 
-	} else {
+	}
+	else if($('#header-menu').hasClass('bg-nav-trans') && $('#nav-icon0').hasClass('open') && $(document).scrollTop() < 70){
+		$("#header-menu").addClass('bg-nav-solid');
+		$("#header-menu").removeClass('bg-nav-trans');
+	} 
+	else if($('#header-menu').hasClass('bg-nav-solid') && $('#nav-icon0').hasClass('collapsed') && $(document).scrollTop() < 70){
 		$("#header-menu").css('padding', '25px 0');
 		// $("#header-menu").css('background-color','rgba(35, 49, 72, .5)')
 		$("#header-menu").addClass('bg-nav-trans');
@@ -29,19 +31,19 @@ $(document).ready(function(){
 
 }
 $(document).on('click', '#nav-icon0', function(){
-	if($('button').hasClass('open') && $(document).scrollTop() < 70){
+	if($('#nav-icon0').hasClass('open') && $(document).scrollTop() < 70){
 		$("#header-menu").addClass('bg-nav-solid');
 		$("#header-menu").removeClass('bg-nav-trans');
 	}
-	else if($('button').hasClass('collapsed') && $(document).scrollTop() < 70){
+	else if($('#nav-icon0').hasClass('collapsed') && $(document).scrollTop() < 70){
 		$("#header-menu").addClass('bg-nav-trans');
 		$("#header-menu").removeClass('bg-nav-solid');
 	}
-	else if($('button').hasClass('open') && $(document).scrollTop() > 70){
+	else if($('#nav-icon0').hasClass('open') && $(document).scrollTop() > 70){
 		$("#header-menu").addClass('bg-nav-solid');
 		$("#header-menu").removeClass('bg-nav-trans');
 	}
-	else if($('button').hasClass('collapsed') && $(document).scrollTop() > 70){
+	else if($('#nav-icon0').hasClass('collapsed') && $(document).scrollTop() > 70){
 		$("#header-menu").addClass('bg-nav-solid');
 		$("#header-menu").removeClass('bg-nav-trans');
 	}
